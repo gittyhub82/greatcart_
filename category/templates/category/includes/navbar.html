@@ -38,18 +38,19 @@
                             <i class="fa fa-bars"></i> All category
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="">All Products </a>
+                            <a class="dropdown-item" href="{% url 'store:store' %}">All Products </a>
                             <!-- it can be done like this: 
                         category.slug
 
                         or you define a method in the model, which you will be using dynamically. It's up to you.
                     
-                    -->
-                            <a class="dropdown-item" href=""></a>
+                    -->     {% for category in links %}
+                            <a class="dropdown-item" href="{{ category.get_url }}">{{ category.category_name }}</a>
+                            {% endfor %}
                         </div>
                     </div> <!-- category-wrap.// -->
                 </div> <!-- col.// -->
-                <a href="" class="btn btn-outline-primary">Store</a>
+                <a href="{% url 'store:store' %}" class="btn btn-outline-primary">Store</a>
                 <div class="col-lg  col-md-6 col-sm-12 col">
                     <form method="" action="" class="search">
                         <div class="input-group w-100">

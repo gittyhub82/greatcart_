@@ -51,7 +51,7 @@
                                                 <a href="{% url 'carts:remove_cart' cart_item.product.id cart_item.id %}" class="btn btn-light" type="button" id="button-plus"> <i
                                                         class="fa fa-minus"></i> </a>
                                             </div>
-                                            <input type="text" class="form-control" value="{{ cart_item.quantity }}">
+                                            <input type="text" readonly class="form-control" value="{{ cart_item.quantity }}">
                                             <div class="input-group-append">
                                                 <form action="{% url 'carts:add_cart' cart_item.product.id %}" method="POST">
                                                   {% csrf_token %}  
@@ -101,7 +101,7 @@
                         <p class="text-center mb-3">
                             <img src="{% static 'category/images/misc/payments.png' %}" height="26">
                         </p>
-                        <a href="./place-order.html" class="btn btn-primary btn-block"> Checkout </a>
+                        <a href="{% url 'carts:checkout' %}" class="btn btn-primary btn-block"> Checkout </a>
                         <a href="{% url 'store:store' %}" class="btn btn-light btn-block">Continue Shopping</a>
                     </div> <!-- card-body.// -->
                 </div> <!-- card.// -->

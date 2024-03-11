@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SECURE_CROSS_ORIGIN_OPENER_POLICY ='same-origin-allow-popups'
+
 
 # Application definition
 
@@ -34,9 +36,10 @@ INSTALLED_APPS = [
     'accounts',
     'carts',
     'category',
-    'jazzmin',
+    # 'jazzmin',
     
     'store',
+    'orders',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -155,3 +158,10 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'gittyhub8@gmail.com'
 EMAIL_HOST_PASSWORD = 'stcvgrclyflesrvi'
 EMAIL_USE_TLS = True
+
+
+# JAZZMIN_SETTINGS = {
+#     "changeform_format": "horizontal_tabs",
+#     # override change forms on a per modeladmin basis
+#     "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
+# }

@@ -4,4 +4,4 @@ venv/
 *.sqlite3
 media/
 
-.env/
+.env
